@@ -17,11 +17,8 @@ Open `http://localhost:3000`.
 
 ```bash
 npm run lint
-npm test
-npm audit --omit=dev
+npm run build
 ```
-
-`npm test` builds the Cloudflare-compatible vinext output and checks that the server-rendered homepage contains the featured projects without PR, commit, or blog framing.
 
 ## Content policy
 
@@ -29,10 +26,6 @@ npm audit --omit=dev
 - Pull requests and commit activity are not treated as standalone portfolio entries.
 - Links lead to live applications, source repositories, or relevant project environments.
 - Employer and education summaries remain concise so projects stay central.
-
-## Deployment
-
-The site is prepared for OpenAI Sites using the project binding in `.openai/hosting.json`.
 
 ## GitHub Pages
 
@@ -45,7 +38,7 @@ The included GitHub Actions workflow builds the static site with:
 
 ```bash
 npm ci
-npm run build:pages
+npm run build
 ```
 
 and deploys the generated `out/` directory to GitHub Pages.
