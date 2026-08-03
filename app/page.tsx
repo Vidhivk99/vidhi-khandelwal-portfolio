@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const projects = [
   {
     title: "AI Data Visualization Agent",
-    tag: "GEN AI",
+    tag: "Generative AI",
     description:
       "Ask questions in plain English and explore the answer through generated Python, charts, tables, and a reviewable execution trail.",
     stack: "Python · Streamlit · E2B",
@@ -21,7 +21,7 @@ const projects = [
   },
   {
     title: "RL Agent for DIAMBRA.ai",
-    tag: "REINFORCEMENT LEARNING",
+    tag: "Reinforcement learning",
     description:
       "A PPO-based gameplay agent for Dead or Alive++, built to learn from visual observations and structured game state.",
     stack: "Python · PPO · SheepRL · VPT",
@@ -30,7 +30,7 @@ const projects = [
   },
   {
     title: "COVID-19 Mortality Prediction",
-    tag: "DATA APPLICATION",
+    tag: "Data application",
     description:
       "An interactive R and Shiny application for exploring pandemic signals, country-level trends, and interpretable mortality models.",
     stack: "R · Shiny · ggplot2 · dplyr",
@@ -39,7 +39,7 @@ const projects = [
   },
   {
     title: "Tile Placement Solver",
-    tag: "ALGORITHMS",
+    tag: "Algorithms",
     description:
       "A backtracking search project for structured tile puzzles, with validation, undo support, and a practical command-line workflow.",
     stack: "Python · Search · Algorithms",
@@ -94,15 +94,8 @@ export default function Home() {
       <SiteHeader />
 
       <section className="hero" id="top" aria-labelledby="hero-title">
-        <div className="hero-glow hero-glow-left" aria-hidden="true" />
-        <div className="hero-glow hero-glow-right" aria-hidden="true" />
-        <div className="hero-grid" aria-hidden="true" />
         <div className="hero-content">
-          <p className="availability"><span /> Open to AI engineering roles</p>
-          <p className="hero-kicker">AI &amp; SOFTWARE ENGINEER</p>
-          <h1 id="hero-title">
-            Building thoughtful tools for <em>AI and data.</em>
-          </h1>
+          <h1 id="hero-title">Building thoughtful tools for AI and data.</h1>
           <p className="hero-intro">
             Hi! I&apos;m Vidhi. I design and build tools that bring AI and data workflows closer to the people who use them. From intelligent applications to interactive analytics, I care about useful systems with strong engineering underneath.
           </p>
@@ -119,7 +112,6 @@ export default function Home() {
 
       <section className="section projects-section" id="projects" aria-labelledby="projects-title">
         <div className="section-heading">
-          <p className="section-label">SELECTED WORK</p>
           <h2 id="projects-title">Projects</h2>
           <p>Some things I&apos;ve enjoyed building across AI, data, and software.</p>
         </div>
@@ -149,7 +141,6 @@ export default function Home() {
 
       <section className="section experience-section" id="experience" aria-labelledby="experience-title">
         <div className="section-heading">
-          <p className="section-label">CAREER</p>
           <h2 id="experience-title">Experience</h2>
           <p>Engineering experience across product, data, and applied AI.</p>
         </div>
@@ -173,9 +164,7 @@ export default function Home() {
       </section>
 
       <section className="contact-section" id="contact" aria-labelledby="contact-title">
-        <div className="contact-glow" aria-hidden="true" />
         <div className="contact-content">
-          <p className="section-label">LET&apos;S TALK</p>
           <h2 id="contact-title">Let&apos;s build something useful.</h2>
           <p>
             I&apos;m always happy to connect about AI engineering, data products, or an interesting problem worth working through.
@@ -191,10 +180,6 @@ export default function Home() {
               <Linkedin aria-hidden="true" size={16} /> LinkedIn
             </a>
           </div>
-          <footer>
-            <span>© 2026 Vidhi Khandelwal</span>
-            <span>Washington, DC</span>
-          </footer>
         </div>
       </section>
     </main>
