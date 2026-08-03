@@ -175,7 +175,7 @@ export default function Home() {
           <p className="section-label">LET&apos;S TALK</p>
           <h2 id="contact-title">Let&apos;s build something useful.</h2>
           <p>
-            I&apos;m always happy to connect about AI engineering, data products, or an interesting problem worth working through.
+            I&apos;m always open to thoughtful conversations about building better AI systems, data products, and software.
           </p>
           <div className="contact-actions">
             <a className="button button-primary" href="mailto:vidhivk99@gmail.com">
