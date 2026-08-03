@@ -61,7 +61,7 @@ export default function Home() {
           <p className="eyebrow">AI systems / data products / software engineering</p>
           <h1 id="hero-title">Vidhi Khandelwal</h1>
           <p className="hero-intro">
-            I build software that turns complex data and model behavior into products people can inspect, operate, and trust.
+            Hi! I&apos;m Vidhi. I design and build tools that bring AI and data workflows closer to the people who use them. From intelligent applications to interactive analytics, I care about useful systems with strong engineering underneath.
           </p>
           <div className="hero-actions">
             <a className="solid-button" href="#projects">
