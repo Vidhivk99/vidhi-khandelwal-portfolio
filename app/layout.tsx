@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { Chivo, Karla } from "next/font/google";
+import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const chivo = Chivo({ variable: "--font-display", subsets: ["latin"] });
-const karla = Karla({ variable: "--font-body", subsets: ["latin"] });
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-display",
+  subsets: ["latin"],
+});
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+});
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
@@ -18,7 +24,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${chivo.variable} ${karla.variable}`}>{children}</body>
+      <body className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }

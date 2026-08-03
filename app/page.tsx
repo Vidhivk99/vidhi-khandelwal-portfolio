@@ -1,47 +1,91 @@
 import type { Metadata } from "next";
-import {
-  ArrowDown,
-  ArrowUpRight,
-  Github,
-  Linkedin,
-  MapPin,
-} from "lucide-react";
-import { ExternalLink, SiteHeader } from "./components";
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-
-function assetPath(path: string) {
-  return `${basePath}${path}`;
-}
+import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
+import { SiteHeader } from "./components";
 
 export const metadata: Metadata = {
   title: "Vidhi Khandelwal | AI and Software Engineer",
   description:
-    "Selected AI, data, and software projects by Vidhi Khandelwal.",
+    "Portfolio of Vidhi Khandelwal, an AI and software engineer building useful, well-engineered data products.",
 };
 
-const additionalProjects = [
+const projects = [
+  {
+    title: "AI Data Visualization Agent",
+    tag: "GEN AI",
+    description:
+      "Ask questions in plain English and explore the answer through generated Python, charts, tables, and a reviewable execution trail.",
+    stack: "Python · Streamlit · E2B",
+    href: "https://github.com/Vidhivk99/Data-Visualization-Agent",
+    action: "View source",
+    featured: true,
+  },
+  {
+    title: "RL Agent for DIAMBRA.ai",
+    tag: "REINFORCEMENT LEARNING",
+    description:
+      "A PPO-based gameplay agent for Dead or Alive++, built to learn from visual observations and structured game state.",
+    stack: "Python · PPO · SheepRL · VPT",
+    href: "https://docs.diambra.ai/envs/games/doapp/",
+    action: "Explore project",
+  },
+  {
+    title: "COVID-19 Mortality Prediction",
+    tag: "DATA APPLICATION",
+    description:
+      "An interactive R and Shiny application for exploring pandemic signals, country-level trends, and interpretable mortality models.",
+    stack: "R · Shiny · ggplot2 · dplyr",
+    href: "https://github.com/Vidhivk99/Covid-19-Mortality-Prediction",
+    action: "View source",
+  },
   {
     title: "Tile Placement Solver",
+    tag: "ALGORITHMS",
     description:
-      "A backtracking search engine with in-place placement, undo, validation, and a command-line workflow for structured tile puzzles.",
-    stack: "Python / Search",
+      "A backtracking search project for structured tile puzzles, with validation, undo support, and a practical command-line workflow.",
+    stack: "Python · Search · Algorithms",
     href: "https://github.com/Vidhivk99/Tile-Placement",
+    action: "View source",
+  },
+];
+
+const experience = [
+  {
+    dates: "2025 - now",
+    location: "Rockville, MD",
+    title: "Software Engineer",
+    company: "Optimoz Inc.",
+    description:
+      "Working on customer-facing AI features, data workflows, multi-tenant product infrastructure, search, and full-stack delivery.",
   },
   {
-    title: "Transformer Anomaly Detection",
+    dates: "2021 - 2023",
+    location: "Pune, India",
+    title: "Data Scientist 2, R&E",
+    company: "Wipro Technologies",
     description:
-      "Sequence-modeling experiments for identifying anomalous behavior in time-dependent data.",
-    stack: "PyTorch / Transformers",
-    href: "https://github.com/Vidhivk99/Anomaly-Detection-using-a-Transformer-Model",
+      "Built machine-learning services and data pipelines across Spark, Hadoop, Airflow, Snowflake, and cloud-based ML tooling.",
   },
   {
-    title: "N-Puzzle Solver",
+    dates: "2020 - 2021",
+    location: "Pune, India",
+    title: "Technical Data Scientist",
+    company: "Zensar Technologies",
     description:
-      "A compact search project exploring state representation and pathfinding for the sliding-tile problem.",
-    stack: "Python / Algorithms",
-    href: "https://github.com/Vidhivk99/N-Puzzle",
+      "Worked on NLP pipelines, model evaluation, forecasting, and data products that supported day-to-day decision making.",
   },
+];
+
+const skills = [
+  "Python",
+  "TypeScript",
+  "React / Next.js",
+  "LLM applications",
+  "RAG & search",
+  "PyTorch",
+  "Data visualization",
+  "Spark / Airflow",
+  "AWS / Docker",
+  "SQL / MongoDB",
 ];
 
 export default function Home() {
@@ -49,181 +93,110 @@ export default function Home() {
     <main>
       <SiteHeader />
 
-      <section className="portfolio-hero" aria-labelledby="hero-title">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          className="hero-product"
-          src={assetPath("/projects/data-visualization-agent.png")}
-          alt="AI Data Visualization Agent workspace"
-        />
-        <div className="hero-wash" aria-hidden="true" />
+      <section className="hero" id="top" aria-labelledby="hero-title">
+        <div className="hero-glow hero-glow-left" aria-hidden="true" />
+        <div className="hero-glow hero-glow-right" aria-hidden="true" />
+        <div className="hero-grid" aria-hidden="true" />
         <div className="hero-content">
-          <p className="eyebrow">AI systems / data products / software engineering</p>
-          <h1 id="hero-title">Vidhi Khandelwal</h1>
+          <p className="availability"><span /> Open to AI engineering roles</p>
+          <p className="hero-kicker">AI &amp; SOFTWARE ENGINEER</p>
+          <h1 id="hero-title">
+            Building thoughtful tools for <em>AI and data.</em>
+          </h1>
           <p className="hero-intro">
             Hi! I&apos;m Vidhi. I design and build tools that bring AI and data workflows closer to the people who use them. From intelligent applications to interactive analytics, I care about useful systems with strong engineering underneath.
           </p>
           <div className="hero-actions">
-            <a className="solid-button" href="#projects">
-              View projects
-              <ArrowDown aria-hidden="true" size={17} />
+            <a className="button button-primary" href="#projects">
+              View projects <ArrowDown aria-hidden="true" size={16} />
             </a>
-            <a className="round-button" href="https://github.com/Vidhivk99" target="_blank" rel="noreferrer" aria-label="GitHub profile">
-              <Github aria-hidden="true" size={20} />
-            </a>
-            <a className="round-button" href="https://www.linkedin.com/in/vidhivk" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
-              <Linkedin aria-hidden="true" size={20} />
+            <a className="button button-secondary" href="#contact">
+              Get in touch
             </a>
           </div>
-        </div>
-        <div className="hero-location">
-          <MapPin aria-hidden="true" size={15} />
-          Washington, DC
         </div>
       </section>
 
-      <section className="project-intro" id="projects">
-        <p className="eyebrow">Selected projects</p>
-        <h2>Three systems, each built around a different kind of uncertainty.</h2>
-      </section>
-
-      <article className="flagship-project">
-        <div className="project-heading">
-          <div>
-            <span className="project-number">01</span>
-            <p className="project-type">AI product / live application</p>
-          </div>
-          <div>
-            <h2>AI Data Visualization Agent</h2>
-            <p className="project-summary">
-              A natural-language analytics workspace that profiles CSV data, generates Python, runs it in an isolated sandbox, and returns the code, chart, table, explanation, and runtime output for review.
-            </p>
-          </div>
+      <section className="section projects-section" id="projects" aria-labelledby="projects-title">
+        <div className="section-heading">
+          <p className="section-label">SELECTED WORK</p>
+          <h2 id="projects-title">Projects</h2>
+          <p>Some things I&apos;ve enjoyed building across AI, data, and software.</p>
         </div>
-
-        <a className="project-screenshot" href="https://vidhi-data-visualization-agent.streamlit.app" target="_blank" rel="noreferrer" aria-label="Open the live AI Data Visualization Agent">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={assetPath("/projects/data-visualization-agent.png")} alt="Live AI Data Visualization Agent workspace with bundled retail data" />
-          <span>Open live workspace <ArrowUpRight aria-hidden="true" size={18} /></span>
-        </a>
-
-        <div className="case-study-grid">
-          <section>
-            <p className="case-label">The problem</p>
-            <h3>Generated analysis is only useful when the work stays visible.</h3>
-            <p>Users needed more than a final chart. They needed to understand which file was active, what code ran, where it ran, and how to inspect the output.</p>
-          </section>
-          <section>
-            <p className="case-label">The system</p>
-            <h3>A controlled path from question to execution.</h3>
-            <p>Dataset profiling and conversation context shape the prompt. Generated Python runs in E2B, while normalized results keep charts, tables, logs, and explanations together.</p>
-          </section>
-          <section>
-            <p className="case-label">The release</p>
-            <h3>A safe public mode with a real product surface.</h3>
-            <p>The public deployment uses synthetic retail data and deterministic local analysis, so the complete workflow is explorable without credentials or external model calls.</p>
-          </section>
-        </div>
-
-        <div className="project-footer-row">
-          <ul className="stack-list" aria-label="Data Visualization Agent technologies">
-            <li>Python</li><li>Streamlit</li><li>Ollama</li><li>E2B</li><li>Pandas</li><li>CI</li>
-          </ul>
-          <div className="project-links">
-            <ExternalLink href="https://vidhi-data-visualization-agent.streamlit.app">Live application</ExternalLink>
-            <ExternalLink href="https://github.com/Vidhivk99/Data-Visualization-Agent">Source code</ExternalLink>
-          </div>
-        </div>
-      </article>
-
-      <article className="project-band project-band-rl">
-        <div className="project-visual project-visual-dark">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={assetPath("/projects/diambra-observation.png")} alt="Dead Or Alive++ environment observation with health, character, wins, and side state annotations" />
-          <p>Environment image: DIAMBRA Arena / Dead Or Alive++</p>
-        </div>
-        <div className="project-detail">
-          <span className="project-number">02</span>
-          <p className="project-type">Reinforcement learning / competition agent</p>
-          <h2>DIAMBRA Fighting-Game Agent</h2>
-          <p className="project-summary">
-            A PPO-based autonomous gameplay agent for Dead Or Alive++, built with SheepRL and a video-pretraining representation to learn from visual observations and structured game state.
-          </p>
-          <dl className="project-facts">
-            <div><dt>Result</dt><dd>5th globally</dd></div>
-            <div><dt>Policy</dt><dd>Proximal Policy Optimization</dd></div>
-            <div><dt>Inputs</dt><dd>Frames + RAM state</dd></div>
-          </dl>
-          <ul className="stack-list" aria-label="DIAMBRA agent technologies">
-            <li>Python</li><li>PPO</li><li>SheepRL</li><li>OpenAI VPT</li>
-          </ul>
-          <ExternalLink href="https://docs.diambra.ai/envs/games/doapp/">Explore the environment</ExternalLink>
-        </div>
-      </article>
-
-      <article className="project-band project-band-covid">
-        <div className="project-detail">
-          <span className="project-number">03</span>
-          <p className="project-type">Statistical modeling / interactive dashboard</p>
-          <h2>COVID-19 Mortality Prediction</h2>
-          <p className="project-summary">
-            An R and Shiny application for comparing country-level pandemic signals, inspecting correlations, and fitting an interpretable per-country mortality model from Our World in Data records.
-          </p>
-          <div className="feature-lines">
-            <p>Country and metric comparison over time</p>
-            <p>Correlation heatmaps across health signals</p>
-            <p>Linear-model predictions with diagnostics</p>
-          </div>
-          <ul className="stack-list" aria-label="Mortality dashboard technologies">
-            <li>R</li><li>Shiny</li><li>ggplot2</li><li>dplyr</li><li>OWID</li>
-          </ul>
-          <ExternalLink href="https://github.com/Vidhivk99/Covid-19-Mortality-Prediction">View project repository</ExternalLink>
-        </div>
-        <div className="project-visual project-visual-dashboard">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={assetPath("/projects/covid-mortality-dashboard.png")} alt="COVID-19 Mortality Prediction Shiny dashboard overview" />
-        </div>
-      </article>
-
-      <section className="more-projects" aria-labelledby="more-projects-title">
-        <div className="more-projects-heading">
-          <p className="eyebrow">Additional work</p>
-          <h2 id="more-projects-title">Algorithms and model experiments</h2>
-        </div>
-        <div className="project-index-list">
-          {additionalProjects.map((project, index) => (
-            <a href={project.href} target="_blank" rel="noreferrer" key={project.title}>
-              <span>{String(index + 4).padStart(2, "0")}</span>
-              <div><h3>{project.title}</h3><p>{project.description}</p></div>
-              <small>{project.stack}</small>
-              <ArrowUpRight aria-hidden="true" size={20} />
+        <div className="project-grid">
+          {projects.map((project) => (
+            <a
+              className={`project-card${project.featured ? " project-card-featured" : ""}`}
+              href={project.href}
+              key={project.title}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="project-card-topline">
+                <p>{project.tag}</p>
+                <ArrowUpRight aria-hidden="true" size={19} />
+              </div>
+              <h3>{project.title}</h3>
+              <p className="project-description">{project.description}</p>
+              <div className="project-card-footer">
+                <span>{project.stack}</span>
+                <strong>{project.action} <span aria-hidden="true">→</span></strong>
+              </div>
             </a>
           ))}
         </div>
       </section>
 
-      <section className="experience-section" id="experience">
-        <div className="experience-heading">
-          <p className="eyebrow">Experience</p>
-          <h2>Building across product, data, and applied AI.</h2>
+      <section className="section experience-section" id="experience" aria-labelledby="experience-title">
+        <div className="section-heading">
+          <p className="section-label">CAREER</p>
+          <h2 id="experience-title">Experience</h2>
+          <p>Engineering experience across product, data, and applied AI.</p>
         </div>
         <div className="experience-list">
-          <div><span>2025 - now</span><strong>Software Engineer, Optimoz</strong><p>AI platform infrastructure, multi-tenant products, semantic search, and full-stack delivery.</p></div>
-          <div><span>2021 - 2023</span><strong>Data Scientist 2, Wipro</strong><p>Machine-learning services and large-scale Spark, Hadoop, Airflow, and Snowflake pipelines.</p></div>
-          <div><span>2020 - 2021</span><strong>Technical Data Scientist, Zensar</strong><p>NLP pipelines, model evaluation, and operational forecasting.</p></div>
+          {experience.map((role) => (
+            <article className="experience-card" key={`${role.company}-${role.dates}`}>
+              <div className="experience-meta">
+                <time>{role.dates}</time>
+                <span>{role.location}</span>
+              </div>
+              <div>
+                <h3>{role.title} <span>·</span> {role.company}</h3>
+                <p>{role.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="skill-list" aria-label="Technical skills">
+          {skills.map((skill) => <span key={skill}>{skill}</span>)}
         </div>
       </section>
 
-      <footer className="home-footer">
-        <div>
-          <p className="eyebrow">Let&apos;s talk</p>
-          <h2>AI products are better when their behavior is visible.</h2>
+      <section className="contact-section" id="contact" aria-labelledby="contact-title">
+        <div className="contact-glow" aria-hidden="true" />
+        <div className="contact-content">
+          <p className="section-label">LET&apos;S TALK</p>
+          <h2 id="contact-title">Let&apos;s build something useful.</h2>
+          <p>
+            I&apos;m always happy to connect about AI engineering, data products, or an interesting problem worth working through.
+          </p>
+          <div className="contact-actions">
+            <a className="button button-primary" href="mailto:vidhivk99@gmail.com">
+              <Mail aria-hidden="true" size={16} /> Email me
+            </a>
+            <a className="button button-secondary" href="https://github.com/Vidhivk99" target="_blank" rel="noreferrer">
+              <Github aria-hidden="true" size={16} /> GitHub
+            </a>
+            <a className="button button-secondary" href="https://www.linkedin.com/in/vidhivk" target="_blank" rel="noreferrer">
+              <Linkedin aria-hidden="true" size={16} /> LinkedIn
+            </a>
+          </div>
+          <footer>
+            <span>© 2026 Vidhi Khandelwal</span>
+            <span>Washington, DC</span>
+          </footer>
         </div>
-        <div className="footer-links">
-          <a href="https://www.linkedin.com/in/vidhivk" target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" size={18} /> LinkedIn</a>
-          <a href="https://github.com/Vidhivk99" target="_blank" rel="noreferrer"><Github aria-hidden="true" size={18} /> GitHub</a>
-        </div>
-      </footer>
+      </section>
     </main>
   );
 }
