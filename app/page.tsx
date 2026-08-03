@@ -8,6 +8,12 @@ import {
 } from "lucide-react";
 import { ExternalLink, SiteHeader } from "./components";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+function assetPath(path: string) {
+  return `${basePath}${path}`;
+}
+
 export const metadata: Metadata = {
   title: "Vidhi Khandelwal | AI and Software Engineer",
   description:
@@ -47,7 +53,7 @@ export default function Home() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="hero-product"
-          src="/projects/data-visualization-agent.png"
+          src={assetPath("/projects/data-visualization-agent.png")}
           alt="AI Data Visualization Agent workspace"
         />
         <div className="hero-wash" aria-hidden="true" />
@@ -97,7 +103,7 @@ export default function Home() {
 
         <a className="project-screenshot" href="https://vidhi-data-visualization-agent.streamlit.app" target="_blank" rel="noreferrer" aria-label="Open the live AI Data Visualization Agent">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/projects/data-visualization-agent.png" alt="Live AI Data Visualization Agent workspace with bundled retail data" />
+          <img src={assetPath("/projects/data-visualization-agent.png")} alt="Live AI Data Visualization Agent workspace with bundled retail data" />
           <span>Open live workspace <ArrowUpRight aria-hidden="true" size={18} /></span>
         </a>
 
@@ -133,7 +139,7 @@ export default function Home() {
       <article className="project-band project-band-rl">
         <div className="project-visual project-visual-dark">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/projects/diambra-observation.png" alt="Dead Or Alive++ environment observation with health, character, wins, and side state annotations" />
+          <img src={assetPath("/projects/diambra-observation.png")} alt="Dead Or Alive++ environment observation with health, character, wins, and side state annotations" />
           <p>Environment image: DIAMBRA Arena / Dead Or Alive++</p>
         </div>
         <div className="project-detail">
@@ -175,7 +181,7 @@ export default function Home() {
         </div>
         <div className="project-visual project-visual-dashboard">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/projects/covid-mortality-dashboard.png" alt="COVID-19 Mortality Prediction Shiny dashboard overview" />
+          <img src={assetPath("/projects/covid-mortality-dashboard.png")} alt="COVID-19 Mortality Prediction Shiny dashboard overview" />
         </div>
       </article>
 

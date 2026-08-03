@@ -33,3 +33,19 @@ npm audit --omit=dev
 ## Deployment
 
 The site is prepared for OpenAI Sites using the project binding in `.openai/hosting.json`.
+
+## GitHub Pages
+
+This repo can also deploy to GitHub Pages as a static export.
+
+- If you keep the repository name as `vidhi-khandelwal-portfolio`, the site will publish at `https://vidhivk99.github.io/vidhi-khandelwal-portfolio/`.
+- If you rename the repository to `Vidhivk99.github.io`, update the workflow environment variable `NEXT_PUBLIC_BASE_PATH` to an empty string so the site publishes at `https://vidhivk99.github.io/`.
+
+The included GitHub Actions workflow builds the static site with:
+
+```bash
+npm ci
+npm run build:pages
+```
+
+and deploys the generated `out/` directory to GitHub Pages.
