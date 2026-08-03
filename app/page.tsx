@@ -97,7 +97,7 @@ export default function Home() {
         <div className="hero-glow hero-glow-left" aria-hidden="true" />
         <div className="hero-glow hero-glow-right" aria-hidden="true" />
         <div className="hero-content">
-          <p className="availability"><span /> Open to AI engineering roles</p>
+          <p className="availability"><span /> Open to new opportunities</p>
           <p className="hero-kicker">AI &amp; SOFTWARE ENGINEER</p>
           <h1 id="hero-title">Building thoughtful tools for <span>AI and data.</span></h1>
           <p className="hero-intro">
